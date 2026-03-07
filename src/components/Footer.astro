@@ -2,7 +2,9 @@
 ---
 
 <footer class="pt-16 pb-10 sm:pt-24 sm:pb-14">
-    <p class="text-sm text-muted">
-        &copy; {new Date().getFullYear()} emdash
-    </p>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
+        <span>&copy; {new Date().getFullYear()} emdash</span>
+        <a href="/privacy" class="hover:text-primary">Privacy</a>
+        <a href="/terms" class="hover:text-primary">Terms</a>
+    </div>
 </footer>
