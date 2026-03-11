@@ -1,15 +1,13 @@
 ---
 import '../../src/styles/globals.css';
-import '@fontsource-variable/inter/wght.css';
-import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 
 interface Props {
     title: string;
+    description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "A fast, keyboard-first Gmail client for Mac. Native, private, and built for people who live in their inbox." } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://emdashmail.com');
 ---
 
 <!doctype html>
@@ -17,18 +15,146 @@ const { title } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <title>{title}</title>
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={canonicalURL.href} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalURL.href} />
+        <meta property="og:site_name" content="Emdash" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     </head>
-    <body class="antialiased text-white bg-complementary">
-        <div class="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
-            <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-                <Header />
-                <main class="grow"><slot /></main>
-                <Footer />
-            </div>
-        </div>
+    <body class="site-body">
+        <nav class="site-nav">
+            <span class="nav-logo">emdash</span>
+            <span class="nav-cta">Coming soon to the Mac App Store</span>
+        </nav>
+        <main class="site-main">
+            <slot />
+        </main>
+        <footer class="site-footer">
+            <a href="mailto:hello@emdashmail.com">hello@emdashmail.com</a>
+            <span class="footer-sep">&middot;</span>
+            <a href="/privacy">Privacy</a>
+            <span class="footer-sep">&middot;</span>
+            <a href="/terms">Terms</a>
+        </footer>
     </body>
 </html>
+
+<style is:global>
+    .site-body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+        font-size: 17px;
+        line-height: 1.6;
+        color: black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .site-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 32px;
+        background: white;
+    }
+    .nav-logo {
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+        line-height: 1.4;
+        letter-spacing: 0.01em;
+    }
+    .nav-cta {
+        color: #888;
+        padding: 10px 24px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4;
+        cursor: default;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+    .site-main {
+        background: white;
+        max-height: 100vh;
+        overflow: hidden;
+        min-height: 100vh;
+    }
+
+    .site-footer {
+        padding: 24px 32px;
+        text-align: center;
+        font-size: 13px;
+    }
+    .site-footer a {
+        color: #999;
+        text-decoration: none;
+    }
+    .site-footer a:hover {
+        color: #666;
+    }
+    .footer-sep {
+        color: #ccc;
+        margin: 0 4px;
+    }
+
+    @media (max-width: 768px) {
+        .site-nav {
+            padding: 12px 16px;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .nav-cta {
+            padding: 8px 16px;
+            font-size: 12px;
+        }
+        .site-footer {
+            padding: 20px 16px;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        html {
+            background: #1a1a1a;
+        }
+        .site-body {
+            color: #e5e5e5;
+        }
+        .site-nav {
+            background: #1a1a1a;
+        }
+        .nav-logo {
+            color: #e5e5e5;
+        }
+        .nav-cta {
+            color: #777;
+            border-color: #333;
+        }
+        .site-main {
+            background: #1a1a1a;
+        }
+        .site-footer a {
+            color: #555;
+        }
+        .site-footer a:hover {
+            color: #777;
+        }
+        .footer-sep {
+            color: #333;
+        }
+    }
+</style>

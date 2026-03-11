@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emdashmail.com/sitemap-index.xml

@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Terms of Service — Emdash" description="Terms of Service for Emdash, a desktop email client for macOS.">
+    <article class="legal">
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last updated: March 10, 2026</p>
+
+        <p>These Terms govern your use of Emdash, a desktop email client for macOS. By using Emdash, you agree to these Terms.</p>
+
+        <hr />
+
+        <h2>What Emdash is</h2>
+        <p>Emdash is a native macOS application that connects to your Gmail account using Google's API. It allows you to read, send, archive, star, snooze, and manage email from your Mac. Email data is stored locally and synced with Gmail.</p>
+
+        <hr />
+
+        <h2>Account and access</h2>
+        <p>You must have a Gmail account to use Emdash. You are responsible for maintaining the security of your Google account.</p>
+        <p>Emdash stores authentication tokens securely in the macOS Keychain and never has access to your Google password.</p>
+
+        <hr />
+
+        <h2>Trial and purchase</h2>
+        <p>Emdash offers a 14-day free trial beginning when you first connect a Gmail account. After the trial ends, continued use requires a one-time purchase of Lifetime Unlock through the Mac App Store.</p>
+        <ul>
+            <li>Purchases are non-consumable and provide permanent access.</li>
+            <li>Refunds are handled by Apple under their refund policies.</li>
+            <li>Pricing may change for future customers.</li>
+        </ul>
+
+        <hr />
+
+        <h2>Your responsibilities</h2>
+        <p>You agree:</p>
+        <ul>
+            <li>You own your Gmail account and its content</li>
+            <li>You are responsible for emails you send</li>
+            <li>You will not use Emdash unlawfully</li>
+            <li>You will comply with Google's Terms of Service</li>
+            <li>You are responsible for securing your device</li>
+        </ul>
+
+        <hr />
+
+        <h2>How Emdash works</h2>
+        <ul>
+            <li>Emdash syncs using Google's API</li>
+            <li>Email is cached locally for speed and offline use</li>
+            <li>Actions sync back to Gmail</li>
+            <li>Delivery depends on Gmail infrastructure</li>
+        </ul>
+
+        <hr />
+
+        <h2>Service limitations</h2>
+        <ul>
+            <li><strong>Dependent on Gmail API:</strong> Changes by Google may affect functionality.</li>
+            <li><strong>No guaranteed uptime:</strong> Operation depends on your device, network, and Gmail.</li>
+            <li><strong>No recovery guarantees:</strong> Deleted emails cannot be restored by Emdash.</li>
+            <li><strong>Delivery limitations:</strong> Email delivery depends on Gmail and recipient servers.</li>
+        </ul>
+
+        <hr />
+
+        <h2>Intellectual property</h2>
+        <p>Emdash, including its design, code, and branding, is owned by us. You are granted a personal, non-transferable license to use the application.</p>
+        <p>You may not copy, reverse engineer, redistribute, or create derivative works.</p>
+
+        <hr />
+
+        <h2>Disclaimer of warranties</h2>
+        <p>Emdash is provided "as is" without warranties of any kind, express or implied.</p>
+
+        <hr />
+
+        <h2>Limitation of liability</h2>
+        <p>To the fullest extent permitted by law, we are not liable for indirect, incidental, or consequential damages arising from your use of Emdash.</p>
+        <p>Our total liability will not exceed the amount you paid for the application.</p>
+
+        <hr />
+
+        <h2>Termination</h2>
+        <p>You may stop using Emdash at any time by signing out and uninstalling it. We may suspend access if you violate these Terms.</p>
+
+        <hr />
+
+        <h2>Changes to these terms</h2>
+        <p>We may update these Terms from time to time. Continued use constitutes acceptance.</p>
+
+        <hr />
+
+        <h2>Governing law</h2>
+        <p>These Terms are governed by the laws of the United States.</p>
+
+        <hr />
+
+        <h2>Contact</h2>
+        <p>Questions about these Terms can be sent to <a href="mailto:hello@emdashmail.com">hello@emdashmail.com</a>.</p>
+    </article>
+</Layout>
+
+<style>
+    .legal {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    .legal h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+    }
+    .last-updated {
+        color: #999;
+        font-size: 13px;
+        margin: 0 0 32px 0;
+    }
+    .legal h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 32px 0 12px 0;
+    }
+    .legal p {
+        margin: 0 0 12px 0;
+        color: #444;
+    }
+    .legal ul {
+        margin: 0 0 12px 0;
+        padding-left: 20px;
+    }
+    .legal li {
+        margin-bottom: 4px;
+        color: #444;
+    }
+    .legal code {
+        background: #f0f0f0;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 13px;
+    }
+    .legal hr {
+        border: none;
+        border-top: 1px solid #e5e5e5;
+        margin: 32px 0;
+    }
+    .legal a {
+        color: #333;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+    .legal a:hover {
+        color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .legal h1, .legal h2 {
+            color: #e5e5e5;
+        }
+        .legal p, .legal li {
+            color: #aaa;
+        }
+        .legal code {
+            background: #2a2a2a;
+            color: #ccc;
+        }
+        .legal hr {
+            border-top-color: #333;
+        }
+        .legal a {
+            color: #ccc;
+        }
+        .legal a:hover {
+            color: #fff;
+        }
+        .last-updated {
+            color: #666;
+        }
+    }
+</style>

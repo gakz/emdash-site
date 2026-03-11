@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacy Policy — Emdash" description="Emdash privacy policy. Your email stays on your device and on Google's servers. We don't store it, track you, or sell data.">
+    <article class="legal">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: March 10, 2026</p>
+
+        <p>Emdash ("we", "our", "us") is a desktop email client for macOS. This Privacy Policy explains what data Emdash accesses, how it is stored, and who it is shared with.</p>
+
+        <hr />
+
+        <h2>The short version</h2>
+        <ul>
+            <li>Your email data stays on your device and on Google's servers. We do not store it.</li>
+            <li>We do not run analytics, track behavior, or sell data.</li>
+            <li>We use Sentry for error reporting and Apple for purchase processing — nothing else.</li>
+        </ul>
+
+        <hr />
+
+        <h2>What data Emdash accesses</h2>
+        <p>When you sign in with Google, Emdash requests access to your Gmail account via OAuth 2.0 using the <code>https://mail.google.com/</code> scope. This allows Emdash to:</p>
+        <ul>
+            <li>Read your email threads and messages</li>
+            <li>Send email on your behalf</li>
+            <li>Archive, star, snooze, and modify labels</li>
+            <li>Mark messages as read or unread</li>
+            <li>Access your email address and display name</li>
+        </ul>
+        <p>Emdash uses the Authorization Code flow with PKCE and requests offline access so it can refresh your session without re-prompting.</p>
+
+        <hr />
+
+        <h2>Where your data is stored</h2>
+
+        <h3>On your device</h3>
+        <p>Emdash stores email data locally on your Mac in a SQLite database located at:</p>
+        <p><code>~/Library/Application Support/emdash/</code></p>
+        <p>OAuth credentials (access token and refresh token) are stored securely in the macOS Keychain and are accessible only to Emdash while your device is unlocked.</p>
+        <p>Certain preferences — such as trial start date, UI settings, and sync state — are stored locally using macOS system storage.</p>
+
+        <h3>No cloud storage</h3>
+        <p>We do not operate servers that store your email content, credentials, or personal information. Your data remains on your device and on Google's servers.</p>
+
+        <hr />
+
+        <h2>Third-party services</h2>
+
+        <h3>Google (Gmail API)</h3>
+        <p>All email operations (reading, sending, syncing, and labeling) occur directly between your device and Google's Gmail API over HTTPS. We act solely as a client to your Gmail account. Google's privacy policy governs how your data is handled on their servers.</p>
+
+        <h3>Sentry (error reporting)</h3>
+        <p>We use Sentry to collect limited diagnostic information when errors occur (for example, sync failures or authentication errors).</p>
+        <p>Reports may include:</p>
+        <ul>
+            <li>Technical metadata</li>
+            <li>Device and OS version</li>
+            <li>Stack traces</li>
+        </ul>
+        <p>They do not include:</p>
+        <ul>
+            <li>Email content</li>
+            <li>Subject lines</li>
+            <li>Message bodies</li>
+        </ul>
+        <p>Performance monitoring and session replay are disabled.</p>
+
+        <h3>Apple (StoreKit)</h3>
+        <p>All purchases are processed through Apple. We do not receive or store your payment information.</p>
+
+        <hr />
+
+        <h2>What we do not do</h2>
+        <ul>
+            <li><strong>No analytics.</strong> We do not use Google Analytics, Mixpanel, or behavioral tracking tools.</li>
+            <li><strong>No advertising.</strong> We do not serve ads or share data with advertisers.</li>
+            <li><strong>No selling data.</strong> We do not sell or rent personal information.</li>
+            <li><strong>No remote email storage.</strong> We do not transmit your email data to our own servers.</li>
+        </ul>
+
+        <hr />
+
+        <h2>Feedback</h2>
+        <p>If you send feedback from within Emdash, it is sent as an email from your Gmail account to us. We receive it like any normal email and do not collect additional data beyond what you send.</p>
+
+        <hr />
+
+        <h2>Data retention</h2>
+        <p>Your email data remains on your device until you sign out, delete the app, or manually remove the local data directory.</p>
+        <p>Signing out removes authentication credentials from the macOS Keychain. Local cached data remains on disk until removed.</p>
+
+        <hr />
+
+        <h2>Your choices</h2>
+        <p>You may:</p>
+        <ul>
+            <li>Sign out at any time to revoke access</li>
+            <li>Revoke access via the <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account permissions page</a></li>
+            <li>Delete local data by removing <code>~/Library/Application Support/emdash/</code></li>
+        </ul>
+
+        <hr />
+
+        <h2>Children's privacy</h2>
+        <p>Emdash is not directed at children under 13, and we do not knowingly collect personal information from children.</p>
+
+        <hr />
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this policy from time to time. Changes will be posted here with an updated date.</p>
+
+        <hr />
+
+        <h2>Contact</h2>
+        <p>Questions about this policy can be sent to <a href="mailto:support@emdashmail.com">support@emdashmail.com</a>.</p>
+    </article>
+</Layout>
+
+<style>
+    .legal {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    .legal h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+    }
+    .last-updated {
+        color: #999;
+        font-size: 13px;
+        margin: 0 0 32px 0;
+    }
+    .legal h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 32px 0 12px 0;
+    }
+    .legal h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 24px 0 8px 0;
+    }
+    .legal p {
+        margin: 0 0 12px 0;
+        color: #444;
+    }
+    .legal ul {
+        margin: 0 0 12px 0;
+        padding-left: 20px;
+    }
+    .legal li {
+        margin-bottom: 4px;
+        color: #444;
+    }
+    .legal code {
+        background: #f0f0f0;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 13px;
+    }
+    .legal hr {
+        border: none;
+        border-top: 1px solid #e5e5e5;
+        margin: 32px 0;
+    }
+    .legal a {
+        color: #333;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+    .legal a:hover {
+        color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .legal h1, .legal h2, .legal h3 {
+            color: #e5e5e5;
+        }
+        .legal p, .legal li {
+            color: #aaa;
+        }
+        .legal code {
+            background: #2a2a2a;
+            color: #ccc;
+        }
+        .legal hr {
+            border-top-color: #333;
+        }
+        .legal a {
+            color: #ccc;
+        }
+        .legal a:hover {
+            color: #fff;
+        }
+        .last-updated {
+            color: #666;
+        }
+    }
+</style>
