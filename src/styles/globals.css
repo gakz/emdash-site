@@ -27,7 +27,7 @@
         line-height: 1.15;
     }
 
-    a:not(.btn) {
+    a:not(.btn):not([class*="btn-"]) {
         @apply underline transition hover:opacity-80;
     }
 
